@@ -17,7 +17,7 @@ function RenderVideo({ position, src }: any) {
     const renderVideoFrame = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-      requestAnimationFrame(renderVideoFrame);
+      // requestAnimationFrame(renderVideoFrame);
     };
 
     video.addEventListener("loadedmetadata", () => {
@@ -28,7 +28,7 @@ function RenderVideo({ position, src }: any) {
     });
 
     video.addEventListener("play", () => {
-      renderVideoFrame();
+      // renderVideoFrame();
     })
 
     video.src = src;
@@ -44,22 +44,23 @@ function RenderVideo({ position, src }: any) {
         autoPlay
         loop
         muted
-        data-html2canvas-ignore
+        // data-html2canvas-ignore
         // src={src}
-        className="z-0 opacity-0 "
+        className="z-0 opacity-100 -rotate-90"
         style={{
-          visibility: "hidden",
-          left: `${position.x}px`,
-          top: `${position.y}px`,
+          visibility: "visible",
+          left: `${position.x}%`,
+          top: `${position.y}%`,
           position: "absolute",
         }}
       />
       <canvas
         ref={canvasRef}
         style={{
+          display: "none",
           position: "absolute",
-          left: `${position.x}px`,
-          top: `${position.y}px`,
+          left: `${position.x}%`,
+          top: `${position.y}%`,
           width: width,
           height: height,
         }}

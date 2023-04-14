@@ -25,7 +25,6 @@ function Stage() {
           videoConstraints={videoConstraints}
           className="absolute w-full h-full object-fill"
         />
-        <RenderVideo position={{ x: 500, y: 500 }} src={video2} />
       </div>
     );
 }
